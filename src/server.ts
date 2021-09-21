@@ -3,18 +3,8 @@
 */
 
 import { ApolloServer } from 'apollo-server';
-
-const typeDefs = `
-    type Query {
-        info: String!
-    }
-`;
-
-const resolvers = {
-    Query: {
-        info: () => 'This is my API'
-    }
-};
+import typeDefs from './lib/graphql/typeDefs';
+import resolvers from './lib/graphql/resolvers';
 
 const server = new ApolloServer({
     typeDefs,
